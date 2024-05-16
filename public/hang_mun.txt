@@ -1,0 +1,5 @@
+File này để trong thư mục public
+http://localhost:3000/hang_mun.txt
+
+Đường dẫn phải đúng
+http://localhost:3000/images/character/accessories/earrings/1.png

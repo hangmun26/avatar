@@ -1,31 +1,34 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Avatar } from "./Avatar";
-import { ListPart } from "./ListPart";
-import body1 from "./character/body/1.png";
-import body2 from "./character/body/2.png";
-import ear1 from "./character/accessories/earrings/2.png";
-import hair1 from "./character/hair/1.png";
-import hair2 from "./character/hair/2.png";
-import hair3 from "./character/hair/3.png";
-import hair4 from "./character/hair/4.png";
-import hair5 from "./character/hair/5.png";
-import hair6 from "./character/hair/6.png";
+import { Avatar } from "./components/Avatar";
+
 import { useState } from "react";
+import { ListPart } from "./components/ListPart";
 
 function App() {
-  const bodyImage = [body1, body2];
-  const hairImages = [hair1, hair2, hair3, hair4, hair5, hair6];
-  const earImages = [ear1];
-  const [body, setBody] = useState();
+  const [hair,setHair] = useState("hair/1.png");
+  const [body,setBody] = useState("body/1.png");
+  const [eyes,setEyes] = useState("eyes/1.png")
 
-  console.log("App", body);
+
+
+
+  
   return (
     <div className="App">
-      <Avatar key="avatar" body={body} />
-      <ListPart key="list-part1" images={bodyImage} setBody={setBody} />
-      <ListPart key="list-part2" images={hairImages} />
-      <ListPart key="list-part3" images={earImages} />
+      <Avatar key="avatar" body={body} hair={hair} eyes={eyes}  />
+
+
+      <ListPart total={17} path={"body"}  setState={setBody}></ListPart>
+      <ListPart total={17} path={"eyes"} setState={setEyes}></ListPart>
+      <ListPart total={73} path={"hair"} setState={setHair}></ListPart>
+      <ListPart total={24} path={"mouths"}></ListPart>
+      <ListPart total={15} path={"eyebrows"}></ListPart>
+      <ListPart total={28} path={"accessories/hats"}></ListPart>
+      <ListPart total={17} path={"accessories/glasses"}></ListPart>
+      <ListPart total={5} path={"clothes/layer_1"}></ListPart>
+      <ListPart total={5} path={"clothes/layer_2"}></ListPart>
+      <ListPart total={9} path={"clothes/layer_3"}></ListPart>
     </div>
   );
 }
